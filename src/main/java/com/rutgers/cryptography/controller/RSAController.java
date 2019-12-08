@@ -20,7 +20,7 @@ public class RSAController {
 
     @Autowired
     private RSAService rsaService;
-    
+
     @RequestMapping(value = "/generate", method = RequestMethod.POST)
     public String generateRSAKey() {
         return rsaService.generateRSAKey();
