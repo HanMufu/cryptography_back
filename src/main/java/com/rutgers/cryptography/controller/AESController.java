@@ -9,10 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
-/**
- * Created by Qin Yuxin on 2019/12/8 12:50
- */
-
 @RestController
 @RequestMapping(value ="/aes")
 public class AESController {

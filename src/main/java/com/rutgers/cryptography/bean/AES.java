@@ -3,10 +3,6 @@ package com.rutgers.cryptography.bean;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.Base64;
 
-/**
- * Created by Qin Yuxin on 2019/12/8 12:43
- */
-
 @JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler"})
 public class AES {
     public String encrypt(String plaintext, String key) {

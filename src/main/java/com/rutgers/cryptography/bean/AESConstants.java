@@ -1,10 +1,5 @@
 package com.rutgers.cryptography.bean;
 
-/**
- * Created by Qin Yuxin on 2019/12/8 12:47
- */
-
-
 public final class AESConstants {
 
     // irreducible polynomial C(x)=03x^3+01x^2+01^2+01x+02

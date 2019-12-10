@@ -5,10 +5,6 @@ import com.rutgers.cryptography.service.AESService;
 import org.springframework.stereotype.Service;
 import com.rutgers.cryptography.bean.AES;
 
-/**
- * Created by Qin Yuxin on 2019/12/8 12:59
- */
-
 @Service
 public class AESServiceImpl implements AESService{
     @Override
