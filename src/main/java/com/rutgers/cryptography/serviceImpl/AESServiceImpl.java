@@ -4,12 +4,15 @@ import com.alibaba.fastjson.JSONObject;
 import com.rutgers.cryptography.service.AESService;
 import org.springframework.stereotype.Service;
 import com.rutgers.cryptography.bean.AES;
+import com.rutgers.cryptography.bean.KeyGenerator;
 
 @Service
 public class AESServiceImpl implements AESService{
     @Override
     public String generateAESKey(){
-        return "qwe";
+        JSONObject responseData = new JSONObject();
+        responseData.put("shared_sec", KeyGenerator.getAESRandomKey());
+        return responseData.toJSONString();
     }
 
     @Override
@@ -24,7 +27,6 @@ public class AESServiceImpl implements AESService{
         responseData.put("cipher_text", cipherText);  // "pub_key" have to be same with frontend's
         responseData.put("decrypt_text", decryptText);
         return responseData.toJSONString();
-
     }
 
 }

@@ -22,7 +22,7 @@ public class AESController {
     }
 
     @RequestMapping(value = "/encrypt", method = RequestMethod.POST)
-    public String encryptRSA(@RequestBody Map<String, Object> params) {
+    public String encryptAES(@RequestBody Map<String, Object> params) {
         String plainText = params.get("plain_text").toString();
         String pubKey = params.get("pub_key").toString();
         return aesService.encryptAES(plainText, pubKey);
