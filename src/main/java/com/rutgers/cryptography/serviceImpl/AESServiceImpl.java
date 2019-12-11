@@ -3,15 +3,14 @@ package com.rutgers.cryptography.serviceImpl;
 import com.alibaba.fastjson.JSONObject;
 import com.rutgers.cryptography.service.AESService;
 import org.springframework.stereotype.Service;
-import com.rutgers.cryptography.bean.AES;
-import com.rutgers.cryptography.bean.KeyGenerator;
+import com.rutgers.cryptography.bean.*;
 
 @Service
 public class AESServiceImpl implements AESService{
     @Override
     public String generateAESKey(){
         JSONObject responseData = new JSONObject();
-        responseData.put("shared_sec", KeyGenerator.getAESRandomKey());
+        responseData.put("shared_sec", AESKeyGenerator.getAESRandomKey());
         return responseData.toJSONString();
     }
 
