@@ -2,8 +2,8 @@ package com.rutgers.cryptography.service;
 
 public interface RSAService {
 
-    String generateRSAKey();
+    String generateRSAKey(String who);
 
-    String encryptRSA(String plainText, String pubKey);
+    String encryptRSA(String plainText);
 
 }

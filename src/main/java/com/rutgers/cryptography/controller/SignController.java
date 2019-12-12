@@ -1,6 +1,6 @@
 package com.rutgers.cryptography.controller;
 
-import com.rutgers.cryptography.service.RSAService;
+import com.rutgers.cryptography.service.SignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,21 +11,20 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value ="/rsa")
-public class RSAController {
+@RequestMapping(value ="/sign")
+public class SignController {
 
     @Autowired
-    private RSAService rsaService;
+    private SignService signService;
 
     @RequestMapping(value = "/generate", method = RequestMethod.POST)
-    public String generateRSAKey(@RequestBody Map<String, Object> params) {
-        String who = params.get("who").toString();
-        return rsaService.generateRSAKey(who);
+    public String generateSignKey() {
+        return signService.generateSignKey();
     }
 
     @RequestMapping(value = "/encrypt", method = RequestMethod.POST)
-    public String encryptRSA(@RequestBody Map<String, Object> params) {
+    public String encryptSign(@RequestBody Map<String, Object> params) {
         String plainText = params.get("plain_text").toString();
-        return rsaService.encryptRSA(plainText);
+        return signService.encryptSign(plainText);
     }
 }
